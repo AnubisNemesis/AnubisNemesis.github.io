@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
-  
+  <title>While(!done) {keep it...}</title>
+  <subtitle>Kevin</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://www.kevinjiang.win/"/>
   <updated>2017-07-17T10:56:32.583Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://www.kevinjiang.win/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>Kevin Jiang</name>
     
   </author>
   
@@ -17,8 +17,8 @@
   
   <entry>
     <title>第一版文章</title>
-    <link href="http://yoursite.com/2017/07/17/%E7%AC%AC%E4%B8%80%E7%89%88%E6%96%87%E7%AB%A0/"/>
-    <id>http://yoursite.com/2017/07/17/第一版文章/</id>
+    <link href="http://www.kevinjiang.win/2017/07/17/%E7%AC%AC%E4%B8%80%E7%89%88%E6%96%87%E7%AB%A0/"/>
+    <id>http://www.kevinjiang.win/2017/07/17/第一版文章/</id>
     <published>2017-07-17T10:44:59.000Z</published>
     <updated>2017-07-17T10:56:32.583Z</updated>
     
@@ -45,8 +45,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2017/07/17/hello-world/"/>
-    <id>http://yoursite.com/2017/07/17/hello-world/</id>
+    <link href="http://www.kevinjiang.win/2017/07/17/hello-world/"/>
+    <id>http://www.kevinjiang.win/2017/07/17/hello-world/</id>
     <published>2017-07-17T07:29:49.446Z</published>
     <updated>2017-07-17T07:29:49.446Z</updated>
     
