@@ -3,23 +3,6 @@
   
     
     <entry>
-      <title><![CDATA[第一版文章]]></title>
-      <url>/2017/07/17/%E7%AC%AC%E4%B8%80%E7%89%88%E6%96%87%E7%AB%A0/</url>
-      <content type="html"><![CDATA[<p>Welcome to [Hexo]</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><blockquote>
-<ul>
-<li>整理知识，学习笔记</li>
-<li>发布日记，杂文，所见所想</li>
-<li>撰写发布技术文稿（代码支持）</li>
-<li>撰写发布学术论文（LaTeX 公式支持）</li>
-</ul>
-</blockquote>
-]]></content>
-      
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[Hello World]]></title>
       <url>/2017/07/17/hello-world/</url>
       <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
@@ -31,6 +14,30 @@
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[第一版文章]]></title>
+      <url>/2017/03/17/%E7%AC%AC%E4%B8%80%E7%89%88%E6%96%87%E7%AB%A0/</url>
+      <content type="html"><![CDATA[<p>Welcome to [Hexo]</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><blockquote>
+<ul>
+<li>整理知识，学习笔记</li>
+<li>发布日记，杂文，所见所想</li>
+<li>撰写发布技术文稿（代码支持）</li>
+<li>撰写发布学术论文（LaTeX 公式支持）</li>
+</ul>
+</blockquote>
+<ul>
+<li>[ ] 支持以 PDF 格式导出文稿</li>
+<li>[ ] 改进 Cmd 渲染算法，使用局部渲染技术提高渲染效率</li>
+<li>[x] 新增 Todo 列表功能</li>
+<li>[x] 修复 LaTex 公式渲染问题</li>
+<li>[x] 新增 LaTex 公式编号功能</li>
+</ul>
 ]]></content>
       
         
