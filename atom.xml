@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kevinjiang.win/"/>
-  <updated>2017-07-22T15:44:30.257Z</updated>
+  <updated>2017-07-22T15:49:26.971Z</updated>
   <id>http://www.kevinjiang.win/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <link href="http://www.kevinjiang.win/2017/01/17/%E7%BD%91%E7%AB%99%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/"/>
     <id>http://www.kevinjiang.win/2017/01/17/网站性能优化方法总结/</id>
     <published>2017-01-17T10:44:59.000Z</published>
-    <updated>2017-07-22T15:44:30.257Z</updated>
+    <updated>2017-07-22T15:49:26.971Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
-<p>前言：工作中遇到一个网站项目，需要我写一份非功能性需求。对此，除了安全性外，网站性能也很关键。对此，总结了一些平常工作中遇到的问题及查找了一些资料，汇总如下。另外，平常工作中经常会开发一些B/S项目，了解网站性能优化的方案也很有指导意义。<br><a id="more"></a></p>
+<p>前言：工作中遇到一个网站项目，需要我写一份非功能性需求。除了安全性外，网站性能也很关键。对此，总结了一些平常工作中遇到的问题及查找了一些资料，汇总如下。另外，平常工作中经常会开发一些B/S项目，了解网站性能优化的方案也很有指导意义。<br><a id="more"></a></p>
 <h2 id="1、尽量减少HTTP请求次数"><a href="#1、尽量减少HTTP请求次数" class="headerlink" title="1、尽量减少HTTP请求次数"></a>1、尽量减少HTTP请求次数</h2><p>终端用户响应的时间中，有80%用于下载各项内容，这部分时间包括下载页面中的图像、样式表、脚本、Flash等。通过减少页面中的元素可以减少HTTP请求的次数，这是提高网页速度的关键步骤。</p>
 </blockquote>
 <p>减少页面组件的方法其实就是简化页面设计。那么有没有一种方法既能保持页面内容的丰富性又能达到加快响应时间的目的呢？这里有几条减少HTTP请求次数同时又可能保持页面内容丰富的技术。</p>
@@ -104,7 +104,7 @@
 <p>按地域布置网站内容的第一步并不是要尝试重新架构你的网站让他们在分发服务器上正常运行。根据应用的需求来改变网站结构，这可能会包括一些比较复杂 的任务，如在服务器间同步Session状态和合并数据库更新等。要想缩短用户和内容服务器的距离，这些架构步骤可能是不可避免的。</p>
 <p>要记住，在终端用户的响应时间中有80%到90%的响应时间用于下载图像、样式表、脚本、Flash等页面内容。这就是网站性能黄金守则。和重新设 计你的应用程序架构这样比较困难的任务相比，首先来分布静态内容会更好一点。这不仅会缩短响应时间，而且对于内容分发网络来说它更容易实现。</p>
 <p>内容分发网络（Content Delivery Network，CDN）是由一系列分散到各个不同地理位置上的Web服务器组成的，它提高了网站内容的传输速度。用于向用户传输内容的服务器主要是根据 和用户在网络上的靠近程度来指定的。例如，拥有最少网络跳数（network hops）和响应速度最快的服务器会被选定。</p>
-<p>一些大型的网络公司拥有自己的CDN，但是使用像Akamai Technologies，Mirror Image Internet， 或者Limelight Networks这样的CDN服务成本却非常高。对于刚刚起步的企业和个人网站来说，可能没有使用CDN的成本预算，但是随着目标用户群的不断扩大和更加 全球化，CDN就是实现快速响应所必需的了。以Yahoo来说，他们转移到CDN上的网站程序静态内容节省了终端用户20%以上的响应时间。使用CDN是 一个只需要相对简单地修改代码实现显著改善网站访问速度的方法。</p>
+<p>一些大型的网络公司拥有自己的CDN，但是使用像Akamai Technologies，Mirror Image Internet，或者Limelight Networks这样的CDN服务成本却非常高。对于刚刚起步的企业和个人网站来说，可能没有使用CDN的成本预算，但是随着目标用户群的不断扩大和更加 全球化，CDN就是实现快速响应所必需的了。以Yahoo来说，他们转移到CDN上的网站程序静态内容节省了终端用户20%以上的响应时间。使用CDN是 一个只需要相对简单地修改代码实现显著改善网站访问速度的方法。</p>
 <h2 id="12、为文件头指定Expires或Cache-Control"><a href="#12、为文件头指定Expires或Cache-Control" class="headerlink" title="12、为文件头指定Expires或Cache-Control"></a>12、为文件头指定Expires或Cache-Control</h2><p>这条守则包括两方面的内容：</p>
 <blockquote>
 <p>对于静态内容：设置文件头过期时间Expires的值为“Never expire”（永不过期）；<br>对于动态内容：使用恰当的Cache-Control文件头来帮助浏览器进行有条件的请求。</p>
@@ -127,13 +127,13 @@
 <p>浏览器和代理都会存在这样的问题：浏览器期望收到的和实际接收到的内容会存在不匹配的现象。幸好，这种特殊情况随着旧式浏览器使用量的减少在减少。 Apache模块会通过自动添加适当的Vary响应文件头来避免这种状况的出现。</p>
 <p>服务器根据文件类型来选择需要进行gzip压缩的文件，但是这过于限制了可压缩的文件。大多数web服务器会压缩HTML文档。对脚本和样式表进行 压缩同 样也是值得做的事情，但是很多web服务器都没有这个功能。实际上，压缩任何一个文本类型的响应，包括XML和JSON，都值得的。图像和PDF文件由于 已经压缩过了所以不能再进行gzip压缩。如果试图gizp压缩这些文件的话不但会浪费CPU资源还会增加文件的大小。</p>
 <p>Gzip压缩所有可能的文件类型是减少文件体积增加用户体验的简单方法。</p>
-<h2 id="14、配置ETag"><a href="#14、配置ETag" class="headerlink" title="14、配置ETag"></a>14、配置ETag</h2><p>Entity tags（ETags）（实体标签）是web服务器和浏览器用于判断浏览器缓存中的内容和服务器中的原始内容是否匹配的一种机制（“实体”就是所说的“内 容”，包括图片、脚本、样式表等）。增加ETag为实体的验证提供了一个比使用“last-modified date（上次编辑时间）”更加灵活的机制。Etag是一个识别内容版本号的唯一字符串。唯一的格式限制就是它必须包含在双引号内。原始服务器通过含有 ETag文件头的响应指定页面内容的ETag。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">HTTP/1.1 200 OK</div><div class="line">Last-Modified: Tue, 12 Dec 2006 03:03:59 GMT</div><div class="line">ETag: “10c24bc-4ab-457e1c1f”</div><div class="line">Content-Length: 12195</div></pre></td></tr></table></figure></p>
+<h2 id="14、配置ETag"><a href="#14、配置ETag" class="headerlink" title="14、配置ETag"></a>14、配置ETag</h2><p>Entity tags（ETags）（实体标签）是web服务器和浏览器用于判断浏览器缓存中的内容和服务器中的原始内容是否匹配的一种机制（“实体”就是所说的“内容”，包括图片、脚本、样式表等）。增加ETag为实体的验证提供了一个比使用“last-modified date（上次编辑时间）”更加灵活的机制。Etag是一个识别内容版本号的唯一字符串。唯一的格式限制就是它必须包含在双引号内。原始服务器通过含有 ETag文件头的响应指定页面内容的ETag。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">HTTP/1.1 200 OK</div><div class="line">Last-Modified: Tue, 12 Dec 2006 03:03:59 GMT</div><div class="line">ETag: “10c24bc-4ab-457e1c1f”</div><div class="line">Content-Length: 12195</div></pre></td></tr></table></figure></p>
 <p>稍后，如果浏览器要验证一个文件，它会使用If-None-Match文件头来把ETag传回给原始服务器。在这个例子中，如果ETag匹配，就会返回一 个304状态码，这就节省了12195字节的响应。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">GET /i/yahoo.gif HTTP/1.1</div><div class="line">Host: www.kevinjiang.win</div><div class="line">If-Modified-Since: Tue, 12 Dec 2016 03:03:59 GMT</div><div class="line">If-None-Match: “10c24bc-4ab-457e1c1f”</div><div class="line">HTTP/1.1 304 Not Modified</div></pre></td></tr></table></figure></p>
 <p>ETag的问题在于，它是根据可以辨别网站所在的服务器的具有唯一性的属性来生成的。当浏览器从一台服务器上获得页面内容后到另外一台服务器上进行 验证时ETag就会不匹配，这种情况对于使用服务器组和处理请求的网站来说是非常常见的。默认情况下，Apache和IIS都会把数据嵌入ETag中，这 会显著减少多服务器间的文件验证冲突。</p>
 <p>Apache 1.3和2.x中的ETag格式为inode-size-timestamp，即使某个文件在不同的服务器上会处于相同的目录下，文件大小、权限、时间戳等都完全相同，但是在不同服务器上他们的内码也是不同的。</p>
 <p>IIS 5.0和IIS 6.0处理ETag的机制相似。IIS中的ETag格式为Filetimestamp:ChangeNumber。用ChangeNumber来跟踪 IIS配置的改变。网站所用的不同IIS服务器间ChangeNumber也不相同。 不同的服务器上的Apache和IIS即使对于完全相同的内容产生的ETag在也不相同，用户并不会接收到一个小而快的304响应；相反他们会接收一个正 常的200响应并下载全部内容。</p>
 <p>如果你的网站只放在一台服务器上，就不会存在这个问题。但是如果你的网站是架设在多个服务器上，并且使用Apache和IIS产生默认的ETag配 置，你的用户获得页面就会相对慢一点，服务器会传输更多的内容，占用更多的带宽，代理也不会有效地缓存你的网站内容。即使你的内容拥有Expires文件 头，无论用户什么时候点击“刷新”或者“重载”按钮都会发送相应的GET请求。</p>
-<p>如果你没有使用ETag提供的灵活的验证模式，那么干脆把所有的ETag都去掉会更好。Last-Modified文件头验证是基于内容的时间戳 的。去掉 ETag文件头会减少响应和下次请求中文件的大小。微软的这篇支持文稿讲述了如何去掉ETag。在Apache中，只需要在配置文件中简单添加下面一行代 码就可以了：FileETag none。</p>
+<p>如果你没有使用ETag提供的灵活的验证模式，那么干脆把所有的ETag都去掉会更好。Last-Modified文件头验证是基于内容的时间戳的。去掉 ETag文件头会减少响应和下次请求中文件的大小。微软的这篇支持文稿讲述了如何去掉ETag。在Apache中，只需要在配置文件中简单添加下面一行代 码就可以了：FileETag none。</p>
 <h2 id="15、尽早刷新输出缓冲"><a href="#15、尽早刷新输出缓冲" class="headerlink" title="15、尽早刷新输出缓冲"></a>15、尽早刷新输出缓冲</h2><p>当用户请求一个页面时，无论如何都会花费200到500毫秒用于后台组织HTML文件。在这期间，浏览器会一直空闲等待数据返回。在PHP中，你可 以使用flush()方法，它允许你把已经编译的好的部分HTML响应文件先发送给浏览器，这时浏览器就会可以下载文件中的内容（脚本等）而后台同时处理 剩余的 HTML页面。这样做的效果会在后台烦恼或者前台较空闲时更加明显。</p>
 <p>输出缓冲应用最好的一个地方就是紧跟在<code>&lt;head/&gt;</code>之后，因为HTML的头部分容易生成而且头部往往包含CSS和JavaScript文件，这样浏览器就可以在后台编译剩余HTML的同时并行下载它们。 例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">… &lt;!– css, js –&gt;</div><div class="line">&lt;/head&gt; </div><div class="line"></div><div class="line">&lt;body&gt;</div><div class="line">… &lt;!– content –&gt;</div></pre></td></tr></table></figure></p>
 <h2 id="16、使用GET来完成AJAX请求"><a href="#16、使用GET来完成AJAX请求" class="headerlink" title="16、使用GET来完成AJAX请求"></a>16、使用GET来完成AJAX请求</h2><p>Yahoo! Mail团队发现，当使用XMLHttpRequest时，浏览器中的POST方法是一个“两步走”的过程：首先发送文件头，然后才发送数据。因此使用 GET最为恰当，因为它只需发送一个TCP包（除非你有很多cookie）。IE中URL的最大长度为2K，因此如果你要发送一个超过2K的数据时就不能 使用GET了。</p>
@@ -150,7 +150,7 @@
 <p>关键问题是，外部JavaScript和CSS文件缓存的频率和请求HTML文档的次数有关。虽然有一定的难度，但是仍然有一些指标可以一测量它。 如果一个会话中用户会浏览你网站中的多个页面，并且这些页面中会重复使用相同的脚本和样式表，缓存外部文件就会带来更大的益处。</p>
 <p>许多网站没有功能建立这些指标。对于这些网站来说，最好的坚决方法就是把JavaScript和CSS作为外部文件引用。比较适合使用内置代码的例 外就是网站的主页，如Yahoo!主页和My Yahoo!。主页在一次会话中拥有较少（可能只有一次）的浏览量，你可以发现内置JavaScript和CSS对于终端用户来说会加快响应时间。</p>
 <p>对于拥有较大浏览量的首页来说，有一种技术可以平衡内置代码带来的HTTP请求减少与通过使用外部文件进行缓存带来的好处。其中一个就是在首页中内 置 JavaScript和CSS，但是在页面下载完成后动态下载外部文件，在子页面中使用到这些文件时，它们已经缓存到浏览器了。</p>
-<h2 id="20、削减JavaScript和CSS"><a href="#20、削减JavaScript和CSS" class="headerlink" title="20、削减JavaScript和CSS"></a>20、削减JavaScript和CSS</h2><p>精简是指从去除代码不必要的字符减少文件大小从而节省下载时间。消减代码时，所有的注释、不需要的空白字符（空格、换行、tab缩进）等都要去掉。 在 JavaScript中，由于需要下载的文件体积变小了从而节省了响应时间。精简JavaScript中目前用到的最广泛的两个工具是JSMin和YUI Compressor。YUI Compressor还可用于精简CSS。</p>
+<h2 id="20、削减JavaScript和CSS"><a href="#20、削减JavaScript和CSS" class="headerlink" title="20、削减JavaScript和CSS"></a>20、削减JavaScript和CSS</h2><p>精简是指从去除代码不必要的字符减少文件大小从而节省下载时间。消减代码时，所有的注释、不需要的空白字符（空格、换行、tab缩进）等都要去掉。在 JavaScript中，由于需要下载的文件体积变小了从而节省了响应时间。精简JavaScript中目前用到的最广泛的两个工具是JSMin和YUI Compressor。YUI Compressor还可用于精简CSS。</p>
 <p>混淆是另外一种可用于源代码优化的方法。这种方法要比精简复杂一些并且在混淆的过程更易产生问题。在对美国前10大网站的调查中发现，精简也可以缩 小原来代码体积的21%，而混淆可以达到25%。尽管混淆法可以更好地缩减代码，但是对于JavaScript来说精简的风险更小。</p>
 <p>除消减外部的脚本和样式表文件外，<code>&lt;script&gt;</code>和<code>&lt;style&gt;</code>代码块也可以并且应该进行消减。即使你用Gzip压缩 过脚本和样式表，精简这些文件仍然可以节省5%以上的空间。由于JavaScript和CSS的功能和体积的增加，消减代码将会获得益处。</p>
 <h2 id="21、用-lt-link-gt-代替-import"><a href="#21、用-lt-link-gt-代替-import" class="headerlink" title="21、用&lt;link&gt;代替@import"></a>21、用&lt;link&gt;代替@import</h2><p>　　前面的最佳实现中提到CSS应该放置在顶端以利于有序加载呈现。<br>　　在IE中，页面底部@import和使用<link>作用是一样的，因此最好不要使用它。<br>　　<strong>LESS、SASS例外！</strong></p>
@@ -214,7 +214,7 @@
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;前言：工作中遇到一个网站项目，需要我写一份非功能性需求。对此，除了安全性外，网站性能也很关键。对此，总结了一些平常工作中遇到的问题及查找了一些资料，汇总如下。另外，平常工作中经常会开发一些B/S项目，了解网站性能优化的方案也很有指导意义。&lt;br&gt;
+&lt;p&gt;前言：工作中遇到一个网站项目，需要我写一份非功能性需求。除了安全性外，网站性能也很关键。对此，总结了一些平常工作中遇到的问题及查找了一些资料，汇总如下。另外，平常工作中经常会开发一些B/S项目，了解网站性能优化的方案也很有指导意义。&lt;br&gt;
     
     </summary>
     
