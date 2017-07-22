@@ -1,136 +1,193 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="pragma" content="no-cache">
-  <meta http-equiv="cache-control" content="no-cache">
-  <meta http-equiv="expires" content="0">
-  
-  <title>网站性能优化方法总结 | Kevin&#39;s Blog</title>
-  <meta name="author" content="Kevin Jiang">
-  
-  <meta name="description" content="Over 9 year IT experience with system integration and construction.Such as OA, ERP, MES, MIS.">
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
 
-  <meta property="og:title" content="网站性能优化方法总结"/>
-  <meta property="og:site_name" content="Kevin&#39;s Blog"/>
+    
 
-  
-    <meta property="og:image" content="undefined"/>
-  
-
-  
-  
-    <link href="/favicon.png" rel="icon">
-  
-  
-  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
-  <script src="/js/jquery-2.0.3.min.js"></script>
-
-  <!-- analytics -->
-  
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-70812759-1', 'auto');
-  ga('send', 'pageview');
-</script>
+    
 
 
 
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?a9c7933244aaa2680ae03aa40a211c96";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-
+    <meta charset="utf-8">
+    
+    
+    
+    <title>网站性能优化方法总结 | Kevin&#39;s Blog | While(!done) {keep it...}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="网站,性能优化">
+    <meta name="description" content="前言：工作中遇到一个网站项目，需要我写一份非功能性需求。除了安全性外，网站性能也很关键。">
+<meta name="keywords" content="网站,性能优化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网站性能优化方法总结">
+<meta property="og:url" content="http://www.kevinjiang.win/2017/01/17/网站性能优化方法总结/index.html">
+<meta property="og:site_name" content="Kevin&#39;s Blog">
+<meta property="og:description" content="前言：工作中遇到一个网站项目，需要我写一份非功能性需求。除了安全性外，网站性能也很关键。">
+<meta property="og:updated_time" content="2017-07-22T17:30:33.780Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网站性能优化方法总结">
+<meta name="twitter:description" content="前言：工作中遇到一个网站项目，需要我写一份非功能性需求。除了安全性外，网站性能也很关键。">
+    
+        <link rel="alternate" type="application/atom+xml" title="Kevin&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
 </head>
 
- <body>  
-  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-		<span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-	  <a class="navbar-brand" href="/">Kevin&#39;s Blog</a>
-      <div class="collapse navbar-collapse nav-menu">
-		<ul class="nav navbar-nav">
-		  
-		  <li>
-			<a href="/archives" title="All the articles.">
-			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/tags" title="All the tags.">
-			  <i class="fa fa-tags"></i>Tags
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/about" title="About me.">
-			  <i class="fa fa-user"></i>About
-			</a>
-		  </li>
-		  
-		</ul>
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Kevin Jiang</h5>
+          <a href="mailto:50191741@qq.com" title="50191741@qq.com" class="mail">50191741@qq.com</a>
+        </hgroup>
       </div>
-    </div> <!-- container -->
-</nav>
-<div class="clearfix"></div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                404 Test
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
 
-  <div class="container">
-  	<div class="content">
-    	 
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">网站性能优化方法总结</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">网站性能优化方法总结</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-01-17T10:44:59.000Z" itemprop="datePublished" class="page-time">
+  2017-01-17
+</time>
 
 
-	
-		<div class="page-header">
-			<h1> 网站性能优化方法总结</h1>
-		</div>
-	
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/前端开发/">前端开发</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1、尽量减少HTTP请求次数"><span class="post-toc-number">1.</span> <span class="post-toc-text">1、尽量减少HTTP请求次数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2、减少DNS查找次数"><span class="post-toc-number">2.</span> <span class="post-toc-text">2、减少DNS查找次数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3、避免跳转"><span class="post-toc-number">3.</span> <span class="post-toc-text">3、避免跳转</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4、可缓存的AJAX"><span class="post-toc-number">4.</span> <span class="post-toc-text">4、可缓存的AJAX</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5、推迟加载内容"><span class="post-toc-number">5.</span> <span class="post-toc-text">5、推迟加载内容</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6、预加载"><span class="post-toc-number">6.</span> <span class="post-toc-text">6、预加载</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7、减少DOM元素数量"><span class="post-toc-number">7.</span> <span class="post-toc-text">7、减少DOM元素数量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8、根据域名划分页面内容"><span class="post-toc-number">8.</span> <span class="post-toc-text">8、根据域名划分页面内容</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#9、使iframe的数量最小"><span class="post-toc-number">9.</span> <span class="post-toc-text">9、使iframe的数量最小</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#10、不要出现404错误"><span class="post-toc-number">10.</span> <span class="post-toc-text">10、不要出现404错误</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#11、使用内容分发网络"><span class="post-toc-number">11.</span> <span class="post-toc-text">11、使用内容分发网络</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#12、为文件头指定Expires或Cache-Control"><span class="post-toc-number">12.</span> <span class="post-toc-text">12、为文件头指定Expires或Cache-Control</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#13、Gzip压缩文件内容"><span class="post-toc-number">13.</span> <span class="post-toc-text">13、Gzip压缩文件内容</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#14、配置ETag"><span class="post-toc-number">14.</span> <span class="post-toc-text">14、配置ETag</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#15、尽早刷新输出缓冲"><span class="post-toc-number">15.</span> <span class="post-toc-text">15、尽早刷新输出缓冲</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#16、使用GET来完成AJAX请求"><span class="post-toc-number">16.</span> <span class="post-toc-text">16、使用GET来完成AJAX请求</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#17、把样式表置于顶部"><span class="post-toc-number">17.</span> <span class="post-toc-text">17、把样式表置于顶部</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#18、避免使用CSS表达式（Expression）"><span class="post-toc-number">18.</span> <span class="post-toc-text">18、避免使用CSS表达式（Expression）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#19、使用外部JavaScript和CSS"><span class="post-toc-number">19.</span> <span class="post-toc-text">19、使用外部JavaScript和CSS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#20、削减JavaScript和CSS"><span class="post-toc-number">20.</span> <span class="post-toc-text">20、削减JavaScript和CSS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#21、用-lt-link-gt-代替-import"><span class="post-toc-number">21.</span> <span class="post-toc-text">21、用<link>代替@import</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#22、避免使用滤镜"><span class="post-toc-number">22.</span> <span class="post-toc-text">22、避免使用滤镜</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#23、把脚本置于页面底部"><span class="post-toc-number">23.</span> <span class="post-toc-text">23、把脚本置于页面底部</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#24、剔除重复脚本"><span class="post-toc-number">24.</span> <span class="post-toc-text">24、剔除重复脚本</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#25、减少DOM访问"><span class="post-toc-number">25.</span> <span class="post-toc-text">25、减少DOM访问</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#26、开发智能事件处理程序"><span class="post-toc-number">26.</span> <span class="post-toc-text">26、开发智能事件处理程序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#27、减小Cookie体积-最好使用localStorage"><span class="post-toc-number">27.</span> <span class="post-toc-text">27、减小Cookie体积,最好使用localStorage</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#28、对于页面内容使用无coockie域名"><span class="post-toc-number">28.</span> <span class="post-toc-text">28、对于页面内容使用无coockie域名</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#29、优化图像"><span class="post-toc-number">29.</span> <span class="post-toc-text">29、优化图像</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#30、优化CSS-Spirite"><span class="post-toc-number">30.</span> <span class="post-toc-text">30、优化CSS Spirite</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#31、不要在HTML中缩放图像"><span class="post-toc-number">31.</span> <span class="post-toc-text">31、不要在HTML中缩放图像</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#32、favicon-ico要小而且可缓存"><span class="post-toc-number">32.</span> <span class="post-toc-text">32、favicon.ico要小而且可缓存</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#33、保持单个内容小于25K"><span class="post-toc-number">33.</span> <span class="post-toc-text">33、保持单个内容小于25K</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#34、打包组件成复合文本"><span class="post-toc-number">34.</span> <span class="post-toc-text">34、打包组件成复合文本</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-网站性能优化方法总结"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">网站性能优化方法总结</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-01-17 18:44:59" datetime="2017-01-17T10:44:59.000Z"  itemprop="datePublished">2017-01-17</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/前端开发/">前端开发</a></li></ul>
 
 
 
-<div class="row post">
-	<!-- cols -->
-	
-	<div id="top_meta"></div>
-	<div class="col-md-9">
-	
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
 
-	<!-- content -->
-	<div class="mypage">		
-	  		
 
-	  <blockquote>
-<p>前言：工作中遇到一个网站项目，需要我写一份非功能性需求。除了安全性外，网站性能也很关键。对此，总结了一些平常工作中遇到的问题及查找了一些资料，汇总如下。另外，平常工作中经常会开发一些B/S项目，了解网站性能优化的方案也很有指导意义。<br><a id="more"></a></p>
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>前言：工作中遇到一个网站项目，需要我写一份非功能性需求。除了安全性外，网站性能也很关键。<a id="more"></a>对此，总结了一些平常工作中遇到的问题及查找了一些资料，汇总如下。另外，平常工作中经常会开发一些B/S项目，了解网站性能优化的方案也很有指导意义。</p>
 </blockquote>
 <h2 id="1、尽量减少HTTP请求次数"><a href="#1、尽量减少HTTP请求次数" class="headerlink" title="1、尽量减少HTTP请求次数"></a>1、尽量减少HTTP请求次数</h2><p>终端用户响应的时间中，有80%用于下载各项内容，这部分时间包括下载页面中的图像、样式表、脚本、Flash等。通过减少页面中的元素可以减少HTTP请求的次数，这是提高网页速度的关键步骤。</p>
 <p>减少页面组件的方法其实就是简化页面设计。那么有没有一种方法既能保持页面内容的丰富性又能达到加快响应时间的目的呢？这里有几条减少HTTP请求次数同时又可能保持页面内容丰富的技术。</p>
@@ -316,138 +373,294 @@ var _hmt = _hmt || [];
 <h2 id="33、保持单个内容小于25K"><a href="#33、保持单个内容小于25K" class="headerlink" title="33、保持单个内容小于25K"></a>33、保持单个内容小于25K</h2><p>这条限制主要是因为iPhone不能缓存大于25K的文件。注意这里指的是解压缩后的大小。由于单纯gizp压缩可能达不要求，因此精简文件就显得十分重要。</p>
 <p>查看更多信息，请参阅Wayne Shea和Tenni Theurer的文件《Performance Research, Part 5: iPhone Cacheability – Making it Stick》。</p>
 <h2 id="34、打包组件成复合文本"><a href="#34、打包组件成复合文本" class="headerlink" title="34、打包组件成复合文本"></a>34、打包组件成复合文本</h2><p>把页面内容打包成复合文本就如同带有多附件的Email，它能够使你在一个HTTP请求中取得多个组件（切记：HTTP请求是很奢侈的）。当你使用这条规则时，首先要确定用户代理是否支持（iPhone就不支持）。</p>
-	  
-	</div>
 
-	<div>
-  	<center>
-	<div class="pagination">
+        </div>
 
-    
-    
-    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>上一页</a>
-    
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-07-22T17:30:33.780Z" itemprop="dateUpdated">2017-07-23 01:30:33</time>
+</span><br>
 
-    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
-    
-    <a href="/2017/01/14/hello-world/" type="button" class="btn btn-default ">下一页<i
-                class="fa fa-arrow-circle-o-right"></i></a>
-    
 
-    
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/01/17/网站性能优化方法总结/" target="_blank" rel="external">http://www.kevinjiang.win/2017/01/17/网站性能优化方法总结/</a>
+        
+    </div>
+    <footer>
+        <a href="http://www.kevinjiang.win">
+            <img src="/img/avatar.jpg" alt="Kevin Jiang">
+            Kevin Jiang
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
 </div>
 
-    </center>
-	</div>
-	
-	<!-- comment -->
-	
-<section id="comment">
-    <h2 class="title">留言</h2>
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/性能优化/">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网站/">网站</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.kevinjiang.win/2017/01/17/网站性能优化方法总结/&title=《网站性能优化方法总结》 — Kevin's Blog&pic=http://www.kevinjiang.win/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.kevinjiang.win/2017/01/17/网站性能优化方法总结/&title=《网站性能优化方法总结》 — Kevin's Blog&source=
+前言：工作中遇到一个网站项目，需要我写一份非功能性需求。除了安全性外，网站性能也很关键。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.kevinjiang.win/2017/01/17/网站性能优化方法总结/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《网站性能优化方法总结》 — Kevin's Blog&url=http://www.kevinjiang.win/2017/01/17/网站性能优化方法总结/&via=http://www.kevinjiang.win" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.kevinjiang.win/2017/01/17/网站性能优化方法总结/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
 
     
-</section>
-
-
-	</div> <!-- col-md-9/col-md-12 -->
-		
-	
-	<div id="side_meta">
-		<div class="col-md-3" id="post_meta"> 
-
-	<!-- date -->
-	
-	<div class="meta-widget">
-	<i class="fa fa-clock-o"></i>
-	2017-01-17 
-	</div>
-	
-
-	<!-- categories -->
-    
-	<div class="meta-widget">
-	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
-    <ul id="categorys" class="tag_box list-unstyled collapse in">
-          
-  <li>
-    <li><a href="/categories/前端开发/">前端开发<span>2</span></a></li>
-  </li>
-
-    </ul>
-	</div>
-	
-
-	<!-- tags -->
-	
-	<div class="meta-widget">
-	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
-    <ul id="tags" class="tag_box list-unstyled collapse in">	  
-	    
-  <li><a href="/tags/网站/">网站<span>1</span></a></li> <li><a href="/tags/性能优化/">性能优化<span>1</span></a></li>
-    </ul>
-	</div>
-		
-
-	<!-- toc -->
-	<div class="meta-widget">
-	
-	</div>
-	
-    <hr>
-	
-</div><!-- col-md-3 -->
-
-	</div>
-		
-
-</div><!-- row -->
-
-
-
-	</div>
-  </div>
-  <div class="container-narrow">
-  <footer> <p>
-  &copy; 2017 Kevin Jiang
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
-      <!--with help from <a href="http://hexo.io/" target="_blank">Hexo</a>,<a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>,<a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a> and <a href="http://getbootstrap.com/" target="_blank">BOOTSTRA.386</a>. 
-     <br> Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind.386</a>.-->    
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/01/14/hello-world/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Hello Hexo!</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
 </p>
- </footer>
-</div> <!-- container-narrow -->
-  
 
 
-  
-<a id="gotop" href="#">   
-  <span>⬆︎TOP</span>
-</a>
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Kevin Jiang &copy; 2016 - 2017</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
 
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/main.js"></script>
-<script src="/js/search.js"></script> 
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.kevinjiang.win/2017/01/17/网站性能优化方法总结/&title=《网站性能优化方法总结》 — Kevin's Blog&pic=http://www.kevinjiang.win/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.kevinjiang.win/2017/01/17/网站性能优化方法总结/&title=《网站性能优化方法总结》 — Kevin's Blog&source=
+前言：工作中遇到一个网站项目，需要我写一份非功能性需求。除了安全性外，网站性能也很关键。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.kevinjiang.win/2017/01/17/网站性能优化方法总结/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《网站性能优化方法总结》 — Kevin's Blog&url=http://www.kevinjiang.win/2017/01/17/网站性能优化方法总结/&via=http://www.kevinjiang.win" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.kevinjiang.win/2017/01/17/网站性能优化方法总结/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://www.kevinjiang.win/2017/01/17/网站性能优化方法总结/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Keep doing...';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Just Do IT!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
 </script>
 
 
 
-   <script type="text/javascript">      
-     var search_path = "search.xml";
-	 if (search_path.length == 0) {
-	 	search_path = "search.xml";
-	 }
-	 var path = "/" + search_path;
-     searchFunc(path, 'local-search-input', 'local-search-result');
-   </script>
-
 </body>
-   </html>
+</html>
