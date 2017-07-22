@@ -47,12 +47,12 @@
     <link href="http://www.kevinjiang.win/2017/01/17/%E7%BD%91%E7%AB%99%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/"/>
     <id>http://www.kevinjiang.win/2017/01/17/网站性能优化方法总结/</id>
     <published>2017-01-17T10:44:59.000Z</published>
-    <updated>2017-07-22T14:58:24.590Z</updated>
+    <updated>2017-07-22T15:04:15.878Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>前言：工作中遇到一个网站项目，需要我写一份非功能性需求。对此，除了安全性外，网站性能也很关键。对此，总结了一些平常工作中遇到的问题及查找了一些资料，汇总如下。另外，平常工作中经常会开发一些B/S项目，了解网站性能优化的方案也很有指导意义。</p>
 </blockquote>
-<p>##1、尽量减少HTTP请求次数<br>终端用户响应的时间中，有80%用于下载各项内容，这部分时间包括下载页面中的图像、样式表、脚本、Flash等。通过减少页面中的元素可以减少HTTP请求的次数，这是提高网页速度的关键步骤。</p>
+<h2 id="1、尽量减少HTTP请求次数"><a href="#1、尽量减少HTTP请求次数" class="headerlink" title="1、尽量减少HTTP请求次数"></a>1、尽量减少HTTP请求次数</h2><p>终端用户响应的时间中，有80%用于下载各项内容，这部分时间包括下载页面中的图像、样式表、脚本、Flash等。通过减少页面中的元素可以减少HTTP请求的次数，这是提高网页速度的关键步骤。</p>
 <p>减少页面组件的方法其实就是简化页面设计。那么有没有一种方法既能保持页面内容的丰富性又能达到加快响应时间的目的呢？这里有几条减少HTTP请求次数同时又可能保持页面内容丰富的技术。</p>
 <blockquote>
 <ul>
@@ -67,18 +67,18 @@
 </ul>
 </blockquote>
 <p>减少页面的HTTP请求次数是你优化网站性能首先要做的一步，这是改进首次访问用户等待时间的最重要的方法。如同Tenni Theurer的博文《Browser Cahe Usage – Exposed》中所说，HTTP请求在无缓存情况下占去了40%到60%的响应时间。改善HTTP请求，让那些初次访问你网站的人获得更加快速的体验 吧！</p>
-<p>##2、减少DNS查找次数<br>域名系统（DNS）提供了域名和IP的对应关系，就像电话本中人名和他们的电话号码的关系一样。当你在浏览器地址栏中输入 www.kevinjiang.win时，DNS解析服务器就会返回这个域名对应的IP地址。DNS解析的过程同样也是需要时间的，一般情况下返回给定域名 对应的IP地址会花费20到120毫秒的时间，而且在这个过程中浏览器什么都不会做直到DNS查找完毕。</p>
+<h2 id="2、减少DNS查找次数"><a href="#2、减少DNS查找次数" class="headerlink" title="2、减少DNS查找次数"></a>2、减少DNS查找次数</h2><p>域名系统（DNS）提供了域名和IP的对应关系，就像电话本中人名和他们的电话号码的关系一样。当你在浏览器地址栏中输入 www.kevinjiang.win时，DNS解析服务器就会返回这个域名对应的IP地址。DNS解析的过程同样也是需要时间的，一般情况下返回给定域名 对应的IP地址会花费20到120毫秒的时间，而且在这个过程中浏览器什么都不会做直到DNS查找完毕。</p>
 <p>缓存DNS查找可以改善页面性能。这种缓存需要一个特定的缓存服务器，这种服务器一般属于用户的ISP提供商或者本地局域网控制，但是它同样会在用 户使用的计算机上产生缓存。DNS信息会保留在操作系统的DNS缓存中（微软Windows系统中DNS Client Service），大多数浏览器有独立于操作系统以外的自己的缓存。由于浏览器有自己的缓存记录，因此在一次请求中它不会受到操作系统的影响。</p>
 <p>Internet Explorer默认情况下对DNS查找记录的缓存时间为30分钟，它在注册表中的键值为DnsCacheTimeout。Firefox对DNS的查找 记录缓存时间为1分钟，它在配置文件中的选项为network.dnsCacheExpiration（Fasterfox把这个选项改为了1小时）。</p>
 <p>当客户端中的DNS缓存都为空时（浏览器和操作系统都为空），DNS查找的次数和页面中主机名的数量相同，这其中包括页面中URL、图片、脚本文 件、样式表、Flash对象等包含的主机名。减少主机名的数量可以减少DNS查找次数。减少主机名的数量还可以减少页面中并行下载的数量。减少DNS查找 次数可以节省响应时间，但是减少并行下载却会增加响应时间。我的指导原则是把这些页面中的内容分割成至少两部分但不超过四部分，这种结果就是在减少DNS 查找次数和保持较高程度并行下载两者之间的权衡了。</p>
-<p>##3、避免跳转<br>跳转是使用301和302代码实现的。下面是一个响应代码为301的HTTP头：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">　　　　HTTP/1.1 301 Moved Permanently</div><div class="line">　　　　Location: http://www.kevinjiang.win/demo</div><div class="line">　　　　Content-Type: text/html</div></pre></td></tr></table></figure></p>
+<h2 id="3、避免跳转"><a href="#3、避免跳转" class="headerlink" title="3、避免跳转"></a>3、避免跳转</h2><p>跳转是使用301和302代码实现的。下面是一个响应代码为301的HTTP头：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">　　　　HTTP/1.1 301 Moved Permanently</div><div class="line">　　　　Location: http://www.kevinjiang.win/demo</div><div class="line">　　　　Content-Type: text/html</div></pre></td></tr></table></figure></p>
 <p>浏览器会把用户指向到Location中指定的URL。头文件中的所有信息在一次跳转中都是必需的，内容部分可以为空。不管他们的名称，301和302 响应都不会被缓存，除非增加一个额外的头选项，如Expires或者Cache-Control来指定它缓存。</p>
 <p><code>&lt;meat/&gt;</code>元素的刷新标签和JavaScript也可以实现URL的跳转，但是如果你必须要跳转的时候，最好的方法就是使用标准的3XXHTTP状态代 码，这主要是为了确保<code>后退</code>按钮可以正确地使用。</p>
 <p>但是要记住跳转会降低用户体验。在用户和HTML文档中间增加一个跳转，会拖延页面中所有元素的显示，因为在HTML文件被加载前任何文件（图像、 Flash等）都不会被下载。</p>
 <p>有一种经常被网页开发者忽略却往往十分浪费响应时间的跳转现象。这种现象发生在当URL本该有斜杠（/）却被忽略掉时。例如，当我们要访问 http: //astrology.yahoo.com/astrology 时，实际上返回的是一个包含301代码的跳转，它指向的是<a href="http://astrology.yahoo.com/astrology/" target="_blank" rel="external">http://astrology.yahoo.com/astrology/</a> （注意末尾的斜杠）。在Apache服务器中可以使用Alias 或者 mod_rewrite或者the DirectorySlash来避免。</p>
 <p>连接新网站和旧网站是跳转功能经常被用到的另一种情况。这种情况下往往要连接网站的不同内容然后根据用户的不同类型（如浏览器类型、用户账号所属类 型）来进行跳转。使用跳转来实现两个网站的切换十分简单，需要的代码量也不多。尽管使用这种方法对于开发者来说可以降低复杂程度，但是它同样降低用户体 验。</p>
 <p>一个可替代方法就是如果两者在同一台服务器上时使用Alias和mod_rewrite和实现。如果是因为域名的不同而采用跳转，那么可以通过使用 Alias或者mod_rewirte建立CNAME（保存一个域名和另外一个域名之间关系的DNS记录）来替代。</p>
-<p>##4、可缓存的AJAX<br>Ajax经常被提及的一个好处就是由于其从后台服务器传输信息的异步性而为用户带来的反馈的即时性。但是，使用Ajax并不能保证用户不会在等待异步的JavaScript和XML响应上花费时间。</p>
+<h2 id="4、可缓存的AJAX"><a href="#4、可缓存的AJAX" class="headerlink" title="4、可缓存的AJAX"></a>4、可缓存的AJAX</h2><p>Ajax经常被提及的一个好处就是由于其从后台服务器传输信息的异步性而为用户带来的反馈的即时性。但是，使用Ajax并不能保证用户不会在等待异步的JavaScript和XML响应上花费时间。</p>
 <p>在很多应用中，用户是否需要等待响应取决于Ajax如何来使用。例如，在一个基于Web的Email客户端中，用户必须等待Ajax返回符合他们条件的邮件查询结果。记住一点，“异步”并不异味着“即时”，这很重要。</p>
 <p>为了提高性能，优化Ajax响应是很重要的。提高Ajxa性能的措施中最重要的方法就是使响应具有可缓存性，具体的讨论可以查看《Add an Expires or a Cache-Control Header》。其它的几条规则也同样适用于Ajax：</p>
 <blockquote>
