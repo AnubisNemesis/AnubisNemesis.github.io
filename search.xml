@@ -6,9 +6,9 @@
       <title><![CDATA[网站性能优化方法总结]]></title>
       <url>/2017/01/17/%E7%BD%91%E7%AB%99%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</url>
       <content type="html"><![CDATA[<blockquote>
-<p>前言：工作中遇到一个网站项目，需要我写一份非功能性需求。对此，除了安全性外，网站性能也很关键。对此，总结了一些平常工作中遇到的问题及查找了一些资料，汇总如下。另外，平常工作中经常会开发一些B/S项目，了解网站性能优化的方案也很有指导意义。</p>
-</blockquote>
+<p>前言：工作中遇到一个网站项目，需要我写一份非功能性需求。对此，除了安全性外，网站性能也很关键。对此，总结了一些平常工作中遇到的问题及查找了一些资料，汇总如下。另外，平常工作中经常会开发一些B/S项目，了解网站性能优化的方案也很有指导意义。<br><a id="more"></a></p>
 <h2 id="1、尽量减少HTTP请求次数"><a href="#1、尽量减少HTTP请求次数" class="headerlink" title="1、尽量减少HTTP请求次数"></a>1、尽量减少HTTP请求次数</h2><p>终端用户响应的时间中，有80%用于下载各项内容，这部分时间包括下载页面中的图像、样式表、脚本、Flash等。通过减少页面中的元素可以减少HTTP请求的次数，这是提高网页速度的关键步骤。</p>
+</blockquote>
 <p>减少页面组件的方法其实就是简化页面设计。那么有没有一种方法既能保持页面内容的丰富性又能达到加快响应时间的目的呢？这里有几条减少HTTP请求次数同时又可能保持页面内容丰富的技术。</p>
 <blockquote>
 <ul>
@@ -216,7 +216,7 @@
       <url>/2017/01/14/hello-world/</url>
       <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a><br><a id="more"></a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
